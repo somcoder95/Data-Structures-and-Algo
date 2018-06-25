@@ -34,6 +34,30 @@
 	  System.out.println("The deleted link is:");
 	  temp.display();
   }
+ public void reverse_list()
+  {
+	  if (!(first==null))
+	  {
+		  myLink current=first;
+		  myLink previous,next;
+		  previous=null;
+		  next=null;
+		  
+		  while(!(current==null))
+		  {
+			  
+			  next=current.next;
+			  current.next=previous;
+			  previous=current;
+			  current=next;
+			  
+			  
+			  
+		  }
+		  first=previous;
+	  }
+	  else System.out.println("The list is empty");
+  }
   public void display_list()
   {
 	  if (!(first==null))
@@ -61,6 +85,7 @@ public static void main(String[] args)
 		mylist.insert_first(data);	
 	}
 	mylist.delete_first();
+	mylist.reverse_list();
 	System.out.println("The list:");
 	mylist.display_list();
 	
